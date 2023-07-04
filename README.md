@@ -1,4 +1,4 @@
-# etu-career-connect-app
+# Edux-Career-Connect-App
 
 This project is a web application that allows users to create an account, log in, update their profile information, and view their profiles. The application uses Amazon S3 to store uploaded images and Amazon DynamoDB to store user data.
 
