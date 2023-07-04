@@ -1,0 +1,314 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  position: relative;
+  font-weight: normal;
+  font-family: "Poppins", sans-serif;
+}
+
+body,
+form,
+input,
+button,
+textarea,
+select {
+  font-size: 1.1rem;
+  color: #001d2c;
+}
+
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+a:active {
+  color: #001d2c;
+}
+a:visited {
+  color: #669BBC;
+}
+
+.edux-logo img {
+  width: 12vw;
+  margin-bottom: 2rem;
+}
+
+.edux-input {
+  margin-bottom: 1rem;
+  padding: 0.7rem 1rem;
+  border-radius: 1.1rem;
+  border: 2px solid #BEBEBE;
+  color: #001d2c;
+  outline: none;
+  width: 20vw;
+}
+.edux-input:focus {
+  border: 2px solid #669BBC;
+}
+
+.edux-btn {
+  color: #ffffff;
+  background-color: #003049;
+  border: #003049;
+  border-radius: 1.1rem;
+  padding: 0.7rem 2rem;
+  cursor: pointer;
+}
+
+input[type=number] {
+  appearance: textfield;
+}
+
+.login {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  text-align: center;
+  justify-content: space-around;
+}
+.login__edux-logo {
+  display: flex;
+  justify-content: center;
+}
+
+.login-field {
+  text-align: center;
+}
+.login-field__heading {
+  font-size: 3rem;
+  font-weight: 600;
+}
+.login-field__intro {
+  margin-top: 1vh;
+  font-weight: 400;
+}
+.login-field form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 8vh;
+}
+.login-field__input {
+  text-align: center;
+}
+.login-field__forget-pass {
+  color: #8d8d8d;
+}
+.login-field__btn {
+  margin-top: 5vh;
+  width: 10vw;
+}
+
+.signup-link {
+  color: #8d8d8d;
+}
+.signup-link a {
+  color: #001d2c;
+}
+
+.signup {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  margin-bottom: 10vh;
+}
+.signup__edux-logo {
+  margin-top: 8vh;
+  display: flex;
+  justify-content: center;
+}
+
+.signup-field__heading {
+  font-size: 3rem;
+  font-weight: 600;
+  margin-top: 5vh;
+}
+.signup-field form {
+  margin-top: 8vh;
+}
+.signup-field__input--gpa {
+  width: 9.5vw;
+}
+.signup-field__select {
+  width: 41vw;
+  background-color: #ffffff;
+}
+.signup-field__select--gender {
+  width: 9.5vw;
+  background-color: #ffffff;
+}
+.signup-field__select option {
+  background-color: #ffffff;
+  margin: 10vw;
+  padding: 10px;
+}
+.signup-field__textarea {
+  resize: vertical;
+  width: 30.5vw;
+}
+.signup-field__btn {
+  margin-top: 5vh;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+.signup-field__row {
+  display: flex;
+  flex-direction: row;
+}
+.signup-field__row--unit {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+.signup-field__row--unit:not(:last-child) {
+  margin-right: 1vw;
+}
+.signup-field__row--unit label {
+  margin-bottom: 0.3rem;
+}
+.signup-field__row--unit .programme {
+  width: 41vw;
+}
+
+.login-link {
+  color: #8d8d8d;
+  margin-top: 1vh;
+}
+.login-link a {
+  color: #001d2c;
+}
+
+.profile-edit__menu {
+  position: fixed;
+  width: 13vw;
+  height: 100vh;
+  background-color: #003049;
+  padding: 5vh 3vw 5vh 2vw;
+}
+.profile-edit__menu__edux-logo img {
+  width: 8vw;
+}
+.profile-edit__menu__navigation {
+  margin-top: 3vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 80vh;
+}
+.profile-edit__menu__navigation--item {
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+}
+.profile-edit__menu__navigation--item--logo img {
+  margin-right: 1vw;
+}
+.profile-edit__menu__navigation--item--link a {
+  color: #ffffff;
+  text-decoration: none;
+}
+.profile-edit__menu__navigation--item--link a:hover {
+  color: #669BBC;
+}
+.profile-edit__content {
+  margin-left: 15vw;
+  position: relative;
+  padding: 5vh 3vw 5vh 5vw;
+}
+.profile-edit__content__profile-image {
+  border: 2px solid #BEBEBE;
+  border-radius: 1.1rem;
+  padding: 1vh 0.5vw 0 0.5vw;
+  overflow: hidden;
+  display: inline-block;
+}
+.profile-edit__content__profile-image-input {
+  display: none;
+}
+.profile-edit__content__profile-image-label {
+  position: relative;
+  display: inline-block;
+  width: 10vw;
+  height: 20vh;
+  border: 2px solid #BEBEBE;
+  border-radius: 1.1rem;
+  overflow: hidden;
+  cursor: pointer;
+  background-repeat: no-repeat;
+}
+.profile-edit__content__profile-image-label:hover {
+  z-index: 99999;
+  background-color: rgba(41, 41, 41, 0.438);
+  border-color: #669BBC;
+}
+.profile-edit__content__profile-image-label::before {
+  content: "No image selected";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.8rem;
+  color: #BEBEBE;
+  text-align: center;
+}
+.profile-edit__content__profile-image-label img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.profile-edit__content__profile-image-btn {
+  top: -1vh;
+  border: none;
+  border-radius: 1rem;
+  background-color: rgb(228, 228, 228);
+  color: #003049;
+  padding: 0.2vh 0.8vw;
+  cursor: pointer;
+  margin-bottom: 2vh;
+}
+.profile-edit__content__profile-form {
+  margin-top: 5vh;
+}
+.profile-edit__content__profile-form--heading {
+  margin-bottom: 2vh;
+}
+.profile-edit__content__profile-form--profile-view-link {
+  margin-left: 2vw;
+}
+
+.profile-view {
+  margin: 8vh 10vw 10vh 5vw;
+}
+.profile-view__heading {
+  margin-bottom: 5vh;
+}
+.profile-view__profile-image {
+  border: 2px solid #BEBEBE;
+  border-radius: 1.1rem;
+  padding: 1vh 0.5vw 0 0.5vw;
+  overflow: hidden;
+  display: inline-block;
+}
+.profile-view__profile-image img {
+  width: 10vw;
+  height: 20vh;
+  bottom: -2vh;
+}
+.profile-view__profile-data {
+  margin-top: 5vh;
+}
+.profile-view__profile-data p {
+  font-size: 1.3rem;
+  margin-bottom: 1.5vh;
+}
+.profile-view__profile-data span {
+  font-weight: 600;
+}/*# sourceMappingURL=styles.css.map */

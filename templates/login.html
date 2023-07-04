@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="../static/css/scss/styles.css" />
+  </head>
+  <body>
+    <div class="login">
+      {{signup_complete_msg}}
+      <div class="login__edux-logo edux-logo">
+        <img src="../static/images/edux-logo-dark.png" alt="edux-logo" />
+      </div>
+
+      <div class="login-field">
+        <h1 class="login-field__heading">Login</h1>
+        <h3 class="login-field__intro">Join the Industry-Student Network</h3>
+
+        <form method="post" action="/login">
+          <input class="login-field__input edux-input" type="number" placeholder="Registration number" name="regno"/>
+          <input class="login-field__input edux-input" type="email" placeholder="Email" name="email"/>
+          <input
+            class="login-field__input edux-input" type="password" placeholder="Password" name="password"/>
+          <a href="#" class="login-field__forget-pass">Forgot password?</a>
+          <input class="login-field__btn edux-btn" type="submit" value="Login" />
+        </form>
+      </div>
+
+      <div class="signup-link">
+        <p>Don’t have an account ? <a href="/signup"> Sign Up</a></p>
+      </div>
+    </div>
+  </body>
+</html>

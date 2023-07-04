@@ -1,0 +1,35 @@
+.profile-view {
+  margin: 8vh 10vw 10vh 5vw;
+
+  &__heading {
+    margin-bottom: 5vh;
+  }
+
+  &__profile-image {
+    border: 2px solid $light-gray;
+    border-radius: 1.1rem;
+    // width: 100%;
+    padding: 1vh 0.5vw 0 0.5vw;
+    overflow: hidden;
+    display: inline-block;
+
+    img {
+      width: 10vw;
+      height: 20vh;
+      bottom: -2vh;
+    }
+  }
+
+  &__profile-data {
+    margin-top: 5vh;
+
+    p {
+      font-size: 1.3rem;
+      margin-bottom: 1.5vh;
+    }
+
+    span {
+      font-weight: 600;
+    }
+  }
+}

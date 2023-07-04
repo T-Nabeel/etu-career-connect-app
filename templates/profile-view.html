@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profle View</title>
+  <link rel="stylesheet" href="../static/css/scss/styles.css" />
+</head>
+<body>
+  <div class="profile-view">
+    <h1 class="profile-view__heading">Student {{regno}} details</h1>
+    <div class="profile-view__profile-image">
+      <img src="{{ profile_image_url }}" alt="Profile Image">
+    </div>
+    <div class="profile-view__profile-data">
+      
+      <p><span> Student name : </span>{{name}}</p>
+      <p><span> Email : </span>{{email}}</p>
+      <p><span> Registration number : </span>{{regno}}</p>
+      <p><span> Degree programme : </span>{{degree_programme}}</p>
+      <p><span> Contact number : </span>{{contactno}}</p>
+      <p><span> Current GPA : </span>{{gpa}}</p>
+      <p><span> Gender : </span>{{gender}}</p>
+      <p><span> Introduction : </span>{{intro}}</p>
+      <p><span> Skills : </span>{{skills}}</p>
+    </div>
+  </div>
+  
+</body>
+</html>

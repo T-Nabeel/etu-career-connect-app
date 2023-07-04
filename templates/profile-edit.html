@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/css/scss/styles.css" />
+    <title>Profile Edit</title>
+  </head>
+  <body>
+    <div class="profile-edit">
+      <div class="profile-edit__menu">
+        <div class="profile-edit__menu__edux-logo edux-logo">
+          <img src="../static/images/edux-logo-light.png" alt="edux-logo" />
+        </div>
+        <div class="profile-edit__menu__navigation">
+          <div class="profile-edit__menu__navigation--item">
+            <div class="profile-edit__menu__navigation--item--logo">
+              <img src="../static/images/profile-icon.svg" alt="profile-icon" />
+            </div>
+            <div class="profile-edit__menu__navigation--item--link">
+              <a href="#">Profile</a>
+            </div>
+          </div>
+          <div class="profile-edit__menu__navigation--item">
+            <div class="profile-edit__menu__navigation--item--logo">
+              <img src="../static/images/logout-icon.svg" alt="profile-icon" />
+            </div>
+            <div class="profile-edit__menu__navigation--item--link">
+              <a href="/">Logout</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="profile-edit__content">
+        <h1 class="profile-edit__content__profile-form--heading">Welcome {{first_name}}</h1>
+        <div id="message"></div>
+        <!-- <div class="profile-edit__content__profile-image">
+          <img src="../static/images/profile-image-male.svg" alt="profile-image">
+        </div> -->
+        <!-- <form action="/imageupload" method="post" enctype="multipart/form-data">
+          <input type="file" name="profileimage" class="profile-edit__content__profile-image-input">
+          <input type="submit" value="update image">
+        </form> -->
+
+        {{image_updated_msg}}
+        <form action="/imageupload" method="post" enctype="multipart/form-data">
+          <input type="file" name="profileimage" id="profile-image-input" class="profile-edit__content__profile-image-input">
+          <label for="profile-image-input" id="profile-image-label" class="profile-edit__content__profile-image-label">
+            <img src="{{ profile_image }}" alt="Profile Image">
+          </label>
+          <input type="submit" value="Update Image" class="profile-edit__content__profile-image-btn">
+        </form>
+        
+
+        <div class="profile-edit__content__profile-form">
+          <h1 class="profile-edit__content__profile-form--heading">Edit Profile</h1>
+          
+          <!--<form method="post" action="/updateprofile">-->
+          <form id="updateProfile">
+            <div class="signup-field__row">
+              <div class="signup-field__row--unit">
+                <label for="firstname">First name:</label>
+                <input class="signup-field__input edux-input" type="text" id="firstname" name="firstname" value={{first_name}}>
+              </div>
+              <div class="signup-field__row--unit">
+                <label for="lastname">Last name:</label>
+                <input class="signup-field__input edux-input" type="text" id="lastname" name="lastname" value={{last_name}}>
+              </div>
+              <div class="signup-field__row--unit">
+                <label for="email">Email:</label>
+                <input class="signup-field__input edux-input" type="email" id="email" name="email" value="{{email}}" disabled>
+              </div>
+            </div>
+
+            <div class="signup-field__row">
+              <div class="signup-field__row--unit">
+                <label for="regno">Registration number:</label>
+                <input class="signup-field__input edux-input" type="number" id="regno" name="regno" value="{{reg_no}}" disabled>
+              </div>
+              <div class="signup-field__row--unit">
+                <label for="degprogramme">Degree programme:</label>
+                
+                <select name="degprogramme" id="degprogramme" class="signup-field__select edux-input" >
+                  <option value="{{deg_programme}}">{{deg_programme}}</option>
+                  {% if deg_programme == "Bsc computer science and engineering" %}
+                  <option value="Bsc mechanical engineering">Bsc mechanical engineering</option>
+                  <option value="Bsc civil engineering">Bsc civil engineering</option>
+                  <option value="Bsc electrical engineering">Bsc electrical engineering</option>
+                  {% elif deg_programme == "Bsc mechanical engineering" %}
+                  <option value="Bsc computer science and engineering">Bsc computer science and engineering</option>
+                  <option value="Bsc civil engineering">Bsc civil engineering</option>
+                  <option value="Bsc electrical engineering">Bsc electrical engineering</option>
+                  {% elif deg_programme == "Bsc civil engineering" %}
+                  <option value="Bsc computer science and engineering">Bsc computer science and engineering</option>
+                  <option value="Bsc mechanical engineering">Bsc mechanical engineering</option>
+                  <option value="Bsc electrical engineering">Bsc electrical engineering</option>
+                  {% elif deg_programme == "Bsc electrical engineering" %}
+                  <option value="Bsc computer science and engineering">Bsc computer science and engineering</option>
+                  <option value="Bsc mechanical engineering">Bsc mechanical engineering</option>
+                  <option value="Bsc civil engineering">Bsc civil engineering</option>
+                  {% endif %}
+                </select>
+              </div>
+            </div>
+
+            <div class="signup-field__row">
+              <div class="signup-field__row--unit">
+                <label for="">Password:</label>
+                <input class="signup-field__input edux-input" type="password" id="password" name="password" value="{{password}}">
+              </div>
+              <div class="signup-field__row--unit">
+                <label for="contactno">Contact number:</label>
+                <input class="signup-field__input edux-input" type="tel" id="contactno" name="contactno" oninput="this.value = this.value.replace(/[^+\d]/g, '')" value="{{contact_no}}">
+              </div>
+              <div class="signup-field__row--unit">
+                <label for="gpa">Current GPA:</label>
+                <input class="signup-field__input signup-field__input--gpa edux-input" type="number" id="gpa" name="gpa" value="{{gpa}}">
+              </div>
+              <div class="signup-field__row--unit">
+                <label for="gender">Gender</label>
+                <select name="gender" id="gender" class="signup-field__select--gender edux-input" required>
+                  <option value="{{gender}}">{{gender}}</option>
+                  {% if gender == "Male" %}
+                  <option value="Female">Female</option>
+                  {% elif gender == "Female" %}
+                  <option value="Male">Male</option>
+                  {% else %}
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                  {% endif %}
+                </select>
+              </div>
+            </div>
+
+            <div class="signup-field__row">
+              <div class="signup-field__row--unit">
+                <label for="">Introduction:</label>
+                <textarea class="signup-field__textarea edux-input" name="intro" id="intro" >{{intro}}</textarea>
+              </div>
+              <div class="signup-field__row--unit">
+                <label for="">Skills:</label>
+                <textarea class="signup-field__textarea edux-input" name="skills" id="skills" >{{skills}}</textarea>
+              </div>
+            </div>
+
+            <input class="signup-field__btn edux-btn" type="submit" value="Update" />
+          </form>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Script to change default user's profile image based on gender  -->
+    <script>
+      const genderSelect = document.querySelector('#gender');
+      const label = document.querySelector('#profile-image-label');
+
+      genderSelect.addEventListener('change', function() {
+        let gender = genderSelect.value;
+        let defaultImage = gender === 'Female' ? 'profile-female.svg' : 'profile-male.svg';
+        label.style.backgroundImage = `url(/static/images/${defaultImage})`;
+      });
+    </script>
+
+    <!-- Script to show the user's upload image -->
+    <script>
+      document.getElementById("profile-image-input").addEventListener("change", function(event) {
+        const file = event.target.files[0];
+        const label = document.getElementById("profile-image-label");
+        const img = label.querySelector("img");
+
+        if (file) {
+          if (img) {
+            label.removeChild(img);
+          }
+          const reader = new FileReader();
+          reader.onload = function(e) {
+            const newImg = document.createElement("img");
+            newImg.src = e.target.result;
+            label.appendChild(newImg);
+            label.style.backgroundImage = "none";
+          };
+          reader.readAsDataURL(file);
+        } else {
+          if (img) {
+            label.removeChild(img);
+          }
+          label.style.backgroundImage = "url(/static/images/profile-image-male.svg)";
+        }
+      });
+
+    </script>
+    
+    <!-- Cannot submit PUT request via action -->
+    <script>
+      document.getElementById('updateProfile').addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        const firstname = document.getElementById('firstname').value;
+        const lastname = document.getElementById('lastname').value;
+        const email = document.getElementById('email').value;
+        const regno = document.getElementById('regno').value;
+        const degprogramme = document.getElementById('degprogramme').value;
+        const password = document.getElementById('password').value;
+        const contactno = document.getElementById('contactno').value;
+        const gpa = document.getElementById('gpa').value;
+        const gender = document.getElementById('gender').value;
+        const intro = document.getElementById('intro').value;
+        const skills = document.getElementById('skills').value;
+        
+        // Get form data
+        const formData = {
+          firstname: firstname,
+          lastname: lastname,
+          email: email,
+          regno: regno,
+          degprogramme: degprogramme,
+          password: password,
+          contactno: contactno,
+          gpa: gpa,
+          gender: gender,
+          intro: intro,
+          skills: skills
+        };
+        
+        // Send PUT request using fetch API
+        fetch('/login/' + regno, {
+          method: 'PUT',
+          body: JSON.stringify(formData), // server cannot handle js objects
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        })
+         .then(function(response) {
+            console.log(formData);
+            console.log('PUT request successful');
+            if (response.ok) {
+            // Update the content of the message element with a success message
+                document.getElementById('message').innerHTML = 'Account details updated!';
+            } else {
+                // Update the content of the message element with an error message
+                document.getElementById('message').innerHTML = 'Some error occurred';
+            }
+          })
+          .catch(function(error) {
+              console.log('Error:', error);
+              // Update the content of the message element with an error message
+              document.getElementById('message').innerHTML = 'Some error occurred';
+          });
+      });
+      
+    </script>
+    
+  </body>
+</html>

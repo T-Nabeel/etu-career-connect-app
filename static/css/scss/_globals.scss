@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+// Style reset
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  position: relative;
+  font-weight: normal;
+  font-family: "Poppins", sans-serif;
+}
+
+body,
+form,
+input,
+button,
+textarea,
+select {
+  font-size: $font-size-para;
+  color: #001d2c;
+}
+
+a {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:active {
+    color: $dark-blue-font;
+  }
+
+  &:visited {
+    color: $ocean-blue;
+  }
+}
+
+.edux-logo {
+  img {
+    width: 12vw;
+    margin-bottom: 2rem;
+  }
+}
+
+.edux-input {
+  margin-bottom: 1rem;
+  padding: 0.7rem 1rem;
+  border-radius: 1.1rem;
+  border: 2px solid $light-gray;
+  color: $dark-blue-font;
+  outline: none;
+  width: 20vw;
+
+  &:focus {
+    border: 2px solid $ocean-blue;
+  }
+}
+
+.edux-btn {
+  color: $white;
+  background-color: $dark-blue;
+  border: $dark-blue;
+  border-radius: 1.1rem;
+  padding: 0.7rem 2rem;
+  cursor: pointer;
+}
+
+// input[type="number"]::-webkit-inner-spin-button,
+// input[type="number"]::-webkit-outer-spin-button {
+//   -webkit-appearance: none;
+//   margin: 0;
+// }
+
+input[type="number"] {
+  appearance: textfield;
+}
+
+// select:invalid {
+//   color: $light-gray;
+// }

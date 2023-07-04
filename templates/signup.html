@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signup</title>
+    <link rel="stylesheet" href="../static/css/scss/styles.css" />
+  </head>
+  <body>
+    <div class="signup">
+      <div class="signup__edux-logo edux-logo">
+        <img src="../static/images/edux-logo-dark.png" alt="edux-logo" />
+      </div>
+
+      <div class="signup-field">
+        <h1 class="signup-field__heading">Create an account</h1>
+        <div class="login-link">
+          <p>Already have an account ? <a href="/">Login</a></p>
+        </div>
+
+        <form method="post" action="/createaccount">
+
+          <div class="signup-field__row">
+            <div class="signup-field__row--unit">
+              <label for="firstname">First name:</label>
+              <input class="signup-field__input edux-input" type="text" id="firstname" name="firstname" required>
+            </div>
+            <div class="signup-field__row--unit">
+              <label for="lastname">Last name:</label>
+              <input class="signup-field__input edux-input" type="text" id="lastname" name="lastname" required>
+            </div>
+            <div class="signup-field__row--unit">
+              <label for="email">Email:</label>
+              <input class="signup-field__input edux-input" type="email" id="email" name="email" required>
+            </div>
+          </div>
+
+          <div class="signup-field__row">
+            <div class="signup-field__row--unit">
+              <label for="regno">Registration number:</label>
+              <input class="signup-field__input edux-input" type="number" id="regno" name="regno" oninput="this.value = this.value.replace(/[^0-9]/g, '')" inputmode="numeric" required>
+            </div>
+            <div class="signup-field__row--unit">
+              <label for="degprogramme">Degree programme:</label>
+              
+              <select name="degprogramme" id="degprogramme" class="signup-field__select edux-input" required>
+                <option value="" disabled selected hidden> </option>
+                <option value="Bsc computer science and engineering">Bsc computer science and engineering</option>
+                <option value="Bsc mechanical engineering">Bsc mechanical engineering</option>
+                <option value="Bsc civil engineering">Bsc civil engineering</option>
+                <option value="Bsc electrical engineering">Bsc electrical engineering</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="signup-field__row">
+            <div class="signup-field__row--unit">
+              <label for="password">Password:</label>
+              <input class="signup-field__input edux-input" type="password" id="password" name="password" required>
+            </div>
+            <div class="signup-field__row--unit">
+              <label for="contactno">Contact number:</label>
+              <input class="signup-field__input edux-input" type="tel" id="contactno" name="contactno" oninput="this.value = this.value.replace(/[^+\d]/g, '')" required>
+            </div>
+            <div class="signup-field__row--unit">
+              <label for="gpa">Current GPA:</label>
+              <input class="signup-field__input signup-field__input--gpa edux-input" type="number" id="gpa" name="gpa" required>
+            </div>
+            <div class="signup-field__row--unit">
+              <label for="gender">Gender</label>
+              <select name="gender" id="gender" class="signup-field__select--gender edux-input" required>
+                <option value="" disabled selected hidden> </option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="signup-field__row">
+            <div class="signup-field__row--unit">
+              <label for="intro">Introduction:</label>
+              <textarea class="signup-field__textarea edux-input" name="intro" id="intro" required></textarea>
+            </div>
+            <div class="signup-field__row--unit">
+              <label for="skills">Skills:</label>
+              <textarea class="signup-field__textarea edux-input" name="skills" id="skills" required></textarea>
+            </div>
+          </div>
+          
+          <input class="signup-field__btn edux-btn" type="submit" value="Create account" />
+        </form>
+
+      </div>
+
+      
+    </div>
+  </body>
+</html>

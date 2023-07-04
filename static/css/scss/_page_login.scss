@@ -1,0 +1,56 @@
+.login {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  text-align: center;
+  justify-content: space-around;
+
+  &__edux-logo {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.login-field {
+  text-align: center;
+
+  &__heading {
+    font-size: $font-size-heading-one;
+    font-weight: 600;
+  }
+
+  &__intro {
+    margin-top: 1vh;
+    font-weight: 400;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 8vh;
+  }
+
+  &__input {
+    text-align: center;
+  }
+
+  &__forget-pass {
+    color: $dark-gray-font;
+  }
+
+  &__btn {
+    margin-top: 5vh;
+    width: 10vw;
+  }
+}
+
+.signup-link {
+  color: $dark-gray-font;
+
+  a {
+    color: $dark-blue-font;
+  }
+}
+

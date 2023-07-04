@@ -1,0 +1,100 @@
+.signup {
+  display: flex;
+  flex-direction: column;
+  // overflow: hidden;
+  text-align: center;
+  align-items: center;
+  margin-bottom: 10vh;
+
+  &__edux-logo {
+    margin-top: 8vh;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.signup-field {
+  // text-align: center;
+
+  &__heading {
+    font-size: $font-size-heading-one;
+    font-weight: 600;
+    margin-top: 5vh;
+  }
+
+  form {
+    // display: flex;
+    // flex-direction: column;
+    // align-items: center;
+    margin-top: 8vh;
+  }
+
+  &__input {
+    &--gpa {
+      width: 9.5vw;
+    }
+  }
+
+  &__select {
+    width: 41vw;
+    background-color: $white;
+
+    &--gender {
+      width: 9.5vw;
+      background-color: $white; 
+    }
+
+    option {
+      background-color: $white;
+      margin: 10vw;
+      padding: 10px;
+    }
+  }
+
+  &__textarea {
+    resize: vertical;
+    width: 30.5vw;
+  }
+
+  &__btn {
+    margin-top: 5vh;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    
+    // width: 12vw; 
+  }
+
+  &__row {
+    display: flex;
+    flex-direction: row;
+
+    &--unit {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+
+      &:not(:last-child) {
+        margin-right: 1vw;
+      }
+
+      label {
+        margin-bottom: 0.3rem;
+      }
+
+      .programme {
+        width: 41vw;
+      }
+    }
+  }
+
+}
+
+.login-link {
+  color: $dark-gray-font;
+  margin-top: 1vh;
+
+  a {
+    color: $dark-blue-font;
+  }
+}
+
